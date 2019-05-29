@@ -1,22 +1,29 @@
 # Linux-Server-Configuration
 
-# Installed Packages:
+*Installed Packages:
 
 apache2 -> Web Server.
+
 libapache2-mod-wsgi -> Tool that serves Python web apps.
-postgresql -> Relational database system
-sqlalchemy -> SQL toolkit
-flask -> Python web framework
+
+postgresql -> Relational database system.
+
+sqlalchemy -> SQL toolkit.
+
+flask -> Python web framework.
+
 git -> Version control tool
 
-# Access :
-# _________
-# IP Address : 54.201.30.157
-# SSH Port : 2200
-# URL : https://lightsail.aws.amazon.com/ls/webapp/us-west-2/instances/Sonam-shukla-1_2_3/connect
+ *Access :
+ _________
+ IP Address : 54.201.30.157
+ 
+ SSH Port : 2200
+ 
+ *URL : https://lightsail.aws.amazon.com/ls/webapp/us-west-2/instances/Sonam-shukla-1_2_3/connect
 
-# Configuration:
-# ________________
+ *Configuration:
+ ________________
 
 * Create a new user with name 'grader':
   $ sudo adduser grader
