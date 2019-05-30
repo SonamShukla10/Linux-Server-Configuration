@@ -16,7 +16,7 @@ git -> Version control tool
 
  *Access :
  _________
- IP Address : 54.201.30.157
+ IP Address : 172.26.0.10
  
  SSH Port : 2200
  
@@ -42,7 +42,7 @@ git -> Version control tool
   $ chmod 644 .ssh/authorized_keys
   
 * Login to the server using ssh key:
-  $ ssh grader@54.201.30.157 -p PORT_NUMBER -i ~/.ssh/authorized_keys
+  $ ssh grader@172.26.0.10 -p PORT_NUMBER -i ~/.ssh/authorized_keys
   
 * Get a list of packages to be upgraded:
   $ sudo apt-get update
