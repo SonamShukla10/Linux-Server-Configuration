@@ -17,6 +17,8 @@ git -> Version control tool
  *Access :
  _________
  IP Address : 54.201.30.157
+
+ Private IP : 172.26.0.10
  
  SSH Port : 2200
  
