@@ -22,6 +22,10 @@ git -> Version control tool
  
  SSH Port : 2200
  
+ Username and password : grader, sonam
+ 
+ Download the private key LightsailDefaultKeyPair.pem
+ 
  *URL : http://ec2-54-201-30-157.us-west-2.compute.amazonaws.com/
 
  *Configuration:
