@@ -34,7 +34,7 @@ git -> Version control tool
  * Generate a SSH key pair on the local machine:
    $ ssh-keygen 
    
- *  file name where rsa key pair has save : lightsailDefaultKeyPair.pem
+ *  file name where rsa key pair has saved : lightsailDefaultKeyPair.pem and public key lightsailDefaultKeyPair.pem.pub
    
    And passphrase : sonam
 
