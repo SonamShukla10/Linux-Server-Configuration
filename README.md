@@ -16,7 +16,7 @@ git -> Version control tool
 
  *Access :
  _________
- IP Address : 54.201.30.157
+ IP Address : 34.213.100.43
 
  Private IP : 172.26.0.10
  
@@ -30,16 +30,20 @@ git -> Version control tool
 
  *Configuration:
  ________________
+ 
+ * Generate a SSH key pair on the local machine:
+   $ ssh-keygen 
+   
+ *  file name where rsa key pair has save : lightsailDefaultKeyPair.pem
+   
+   And passphrase : sonam
 
 * Create a new user with name 'grader':
   $ sudo adduser grader
   
 * Grant user permission to perform sudo command:
   $ sudo nano /etc/sudoers.d/grader
-  $ grader ALL=(ALL) NOPASSWD:ALL
-  
- * Generate a SSH key pair on the local machine:
-   $ ssh-keygen  
+  $ grader ALL=(ALL) NOPASSWD:ALL 
 
 * Place the public key on remote server:
   $ mkdir .ssh
@@ -48,7 +52,7 @@ git -> Version control tool
   $ chmod 644 .ssh/authorized_keys
   
 * Login to the server using ssh key:
-  $ ssh grader@54.201.30.157 -p PORT_NUMBER -i ~/.ssh/authorized_keys
+  $ ssh grader@34.213.100.43 -p PORT_NUMBER -i ~/.ssh/authorized_keys
   
 * Get a list of packages to be upgraded:
   $ sudo apt-get update
