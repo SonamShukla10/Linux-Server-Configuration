@@ -26,7 +26,16 @@ git -> Version control tool
  
  Download the private key LightsailDefaultKeyPair.pem
  
- *URL : http://ec2-34-213-100-43.us-west-2.compute.amazonaws.com
+ 
+ 
+ * Start a new Ubuntu Linux server instance on Amazon Lightsail
+* Login into Amazon Lightsail using an Amazon Web Services account.
+* Once you are login into the site, click Create instance.
+* Choose Linux/Unix platform, OS Only and Ubuntu 16.04 LTS.
+* Choose a instance plan (I took the cheapest, $5/month).
+* Keep the default name provided by AWS or rename your instance.
+* Click the Create button to create the instance.
+* Wait for the instance to start up.
 
  *Configuration:
  ________________
