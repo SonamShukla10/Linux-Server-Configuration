@@ -1,6 +1,6 @@
 # Linux-Server-Configuration
 
-Use the file lightsail_key.rsa
+Use the file id_rsa
 
 *Installed Packages:
 
