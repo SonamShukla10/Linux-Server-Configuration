@@ -1,5 +1,7 @@
 # Linux-Server-Configuration
 
+Use the file lightsail_key.rsa
+
 *Installed Packages:
 
 apache2 -> Web Server.
