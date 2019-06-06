@@ -20,7 +20,7 @@ git -> Version control tool
 
  Private IP : 172.26.0.10
  
- SSH Port : 22
+ SSH Port : 2200
  
  Username and password : grader, sonam
  
