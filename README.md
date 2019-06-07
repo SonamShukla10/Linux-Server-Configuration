@@ -1,7 +1,5 @@
 # Linux-Server-Configuration
 
-Use the file id_rsa
-
 *Installed Packages:
 
 apache2 -> Web Server.
@@ -18,11 +16,12 @@ git -> Version control tool
 
  *Access :
  _________
- IP Address : 34.213.100.43
+ IP Address : 54.203.8.184
 
  Private IP : 172.26.0.10
  
  SSH Port : 2200
+ (If it's not working then run sudo apt-get install ssh or try on port 2222).
  
  Username and password : grader, sonam
  
@@ -42,28 +41,57 @@ git -> Version control tool
  *Configuration:
  ________________
  
- * Generate a SSH key pair on the local machine:
-   $ ssh-keygen 
-   
- *  file name where rsa key pair has saved : lightsailDefaultKeyPair.pem and public key lightsailDefaultKeyPair.pem.pub
-   
-   And passphrase : sonam
-
-* Create a new user with name 'grader':
+ * Download private key from the SSH keys section in the Account section on Amazon Lightsail. The file name should be like LightsailDefaultPrivateKey-us-east-2.pem
+ 
+ * Create a new file named lightsail_key.rsa under ~/.ssh folder on your local machine
+ 
+ * Copy and paste content from downloaded private key file to lightsail_key.rsa
+ 
+ * Set file permission as owner only : $ chmod 600 ~/.ssh/lightsail_key.rsa.
+ 
+ * SSH into the instance: $ ssh -i ~/.ssh/lightsail_key.rsa ubuntu@54.203.8.184
+ 
+ *  Create a new user with name 'grader':
   $ sudo adduser grader
   
 * Grant user permission to perform sudo command:
   $ sudo nano /etc/sudoers.d/grader
   $ grader ALL=(ALL) NOPASSWD:ALL 
 
-* Place the public key on remote server:
-  $ mkdir .ssh
-  $ touch .ssh/authorized_keys, follows by pasting public key into authorized_keys file
-  $ chmod 700 .ssh
-  $ chmod 644 .ssh/authorized_keys
-  
+ 
+ * Create an SSH key pair for grader using the ssh-keygen tool on your local machine. Save it in ~/.ssh path
+    Deploy public key on development environment
+    
+ * On your local machine, read the generated public key cat ~/.ssh/FILE-NAME.pub
+ 
+ * On your virtual machine
+ 
+   $ mkdir .ssh
+   
+   $ touch .ssh/authorized_keys
+   
+   $ nano .ssh/authorized_keys
+   
+* Copy the public key to this authorized_keys file on the virtual machine and save
+
+* Run chmod 700 .ssh and chmod 644 .ssh/authorized_keys on your virtual machine to change file permission
+
+* Restart SSH: $ sudo service ssh restart
+
+* Now you are able to login in as grader: $ ssh -i ~/.ssh/grader_key -p 2200 grader@54.203.8.184
+
+* If you will be asked for grader's password is sonam or open configuration file again: $ sudo nano /etc/ssh/sshd_config
+
+ * Change PasswordAuthentication yes to no
+ 
+* Restart SSH: $ sudo service ssh restart
+   
+ *  file name where rsa key pair has saved : lightsailDefaultKeyPair.pem and public key lightsailDefaultKeyPair.pem.pub
+   
+   And passphrase : sonam
+
 * Login to the server using ssh key:
-  $ ssh grader@34.213.100.43 -p PORT_NUMBER -i ~/.ssh/authorized_keys
+  $ ssh grader@54.203.8.184 -p PORT_NUMBER -i ~/.ssh/authorized_keys
   
 * Get a list of packages to be upgraded:
   $ sudo apt-get update
