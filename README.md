@@ -50,6 +50,8 @@ git -> Version control tool
  * Set file permission as owner only : $ chmod 600 ~/.ssh/lightsail_key.rsa.
  
  * SSH into the instance: $ ssh -i ~/.ssh/lightsail_key.rsa ubuntu@54.203.8.184
+  
+* PermitRootLogin prohibit-password :  cat /etc/ssh/sshd_config | grep PermitRootLogin
  
  *  Create a new user with name 'grader':
   $ sudo adduser grader
@@ -112,12 +114,18 @@ git -> Version control tool
   $ sudo ufw allow www
 * Allow incoming connections for NTP (port 123):
   $ sudo ufw allow ntp
+* Activate the firewall :
+  $ sudo ufw enable
   
 * Configure the local timezone to UTC
   $ sudo dpkg-reconfigure tzdata   
   
 * Install Apache2:
   $ sudo apt-get install apache2
+* To install mod_wsgi:
+  $ sudo apt-get install libapache2-mod-wsgi python-dev
+* To enable mod_wsgi, run the following command:
+  $ sudo a2enmod wsgi  
 * Install mod_wsgi for serving Python apps from Apache:
   $ sudo apt-get install python-setuptools libapache2-mod-wsgi
 * Restart the Apache server for mod_wsgi to load:
@@ -157,3 +165,8 @@ git -> Version control tool
 * Create postgreSQL database schema:
   $ python db_setup.py
 * Run the application 
+
+
+Third party resources :::
+ * https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+ * https://www.digitalocean.com/community/tutorials/how-to-tune-your-ssh-daemon-configuration-on-a-linux-vps
