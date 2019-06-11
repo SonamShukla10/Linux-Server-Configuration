@@ -64,6 +64,10 @@ git -> Version control tool
  * Create an SSH key pair for grader using the ssh-keygen tool on your local machine. Save it in ~/.ssh path
     Deploy public key on development environment
     
+  * New key pair for grader ( authorized key) :: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeilxrrYTNOLQSySnhApGAhND3e2knhdDD/eg2iQwHpyguH3TKLOnZbg1pooweE+FWGyPEMVL2QDFVbluUMShrt88ZK97yYFvPrCaG1IvWQzROQwJNlul4EFRcG1xqYHBuQExr3WYukzxBeBt7LfuRt+RSuNQVv2biF/9IKfEFis6UUpKUIcoP7MH6x3AlbnSIiQPFGIooIHDonTGFEGgqzmW4a2LAKelA7TUPcB++tJPQiOfBd1/tfKzaEBve8RZYdk4LbdfiPxStekUo3uod1hCagRrXES8tUQ8yTfaSRP2NVv8FtiAG7ahviWP5mJ5JhFVNEgzoJBQT4yOS4p69 sonam@DESKTOP-R855TSV
+
+ 
+    
  * On your local machine, read the generated public key cat ~/.ssh/FILE-NAME.pub
  
  * On your virtual machine
@@ -110,12 +114,12 @@ git -> Version control tool
   $ sudo ufw default allow outgoing
 * Allow incoming connections for SSH (port 2200):
   $ sudo ufw allow 2200/tcp
+* Activate the firewall :
+  $ sudo ufw enable  
 * Allow incoming connections for HTTP (port 80):
-  $ sudo ufw allow www
+  $ sudo ufw allow 80
 * Allow incoming connections for NTP (port 123):
   $ sudo ufw allow ntp
-* Activate the firewall :
-  $ sudo ufw enable
   
 * Configure the local timezone to UTC
   $ sudo dpkg-reconfigure tzdata   
@@ -130,18 +134,54 @@ git -> Version control tool
   $ sudo apt-get install python-setuptools libapache2-mod-wsgi
 * Restart the Apache server for mod_wsgi to load:
   $ sudo service apache2 restart
-
+* Create a flask app :
+  $ cd /var/www
+  $ sudo mkdir FlaskApp
+  $ cd FlaskApp
+  $ sudo mkdir static templates
+  $ create __init__.py
+  $ sudo nano __init__.py
+     from flask import Flask
+app = Flask(__name__)
+@app.route("/")
+def hello():
+    return "Hello, I love Digital Ocean!"
+if __name__ == "__main__":
+    app.run()
+    
+* $ sudo apt-get install pip
+* $ sudo pip install virtualenv
+* $ sudo virtualenv venv
+* $ sudo pip install Flask    
+* $ source venv/bin/activate   
+* $ sudo python __init__.py  
 * Install Git and clone Catalog app:
   $ sudo apt-get install git 
 * Install and configure PostgreSQL
 
+
+* Create the .wsgi File
+ $ cd /var/www/FlaskApp
+ $ sudo nano flaskapp.wsgi 
+        #!/usr/bin/python
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0,"/var/www/FlaskApp/")
+from FlaskApp import app as application
+application.secret_key = 'E4huKuAqgZRyMnAS9xAcYQHX'
+  * $ sudo service apache2 restart      
+        
 * Install PostgreSQL:
   $ sudo apt-get install postgresql postgresql-contrib
+     
+
   
 * Open the database setup file:
   $ sudo vim db_setup.py
 * Change from sqlite to postgresql:
   python engine = create_engine('postgresql://catalog:PW-FOR-DB@localhost/catalog')
+  
 * Rename item.py: 
   $ mv item.py __init__.py
 * Create linux user for psql:
