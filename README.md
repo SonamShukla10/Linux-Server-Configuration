@@ -30,7 +30,7 @@ git -> Version control tool
 
  Private IP : 172.26.0.10
  
- SSH Port : 2200
+ SSH Port : 2200 / 2222
  
 * Download the default private key 
 * Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory). like, you downloaded the file to the documents folder, just execute the following command in your terminal. mv ~/documents/udacity_key.rsa ~/.ssh/  
