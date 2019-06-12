@@ -104,7 +104,8 @@ $ sudo ufw enable
 * Move to the inner FlaskApp directory using, $ cd FlaskApp
 * Rename item.py to __init__.py using,
        $ sudo mv website.py __init__.py
-* Edit db_setup.py, item.py and lotsofitems.py and change engine =       create_engine('sqlite:///db_catalog.db') to engine =  create_engine('postgresql://catalog:sonam@localhost/catalog')
+* Edit db_setup.py, item.py and lotsofitems.py and change engine = create_engine('sqlite:///db_catalog.db') to
+    engine =  create_engine('postgresql://catalog:sonam@localhost/catalog')
 * $ sudo apt-get install python-pip
 * Install psycopg2 sudo apt-get -qqy install postgresql python-psycopg2
 * Create database schema, $ sudo python db_setup.py
@@ -113,22 +114,39 @@ $ sudo ufw enable
   * Create FlaskApp.conf to edit: $ sudo nano /etc/apache2/sites-available/FlaskApp.conf
   
 * Add the following lines of code to the file to configure the virtual host.
-      <VirtualHost *:80>
-	   ServerName 52.24.125.52
+
+        <VirtualHost *:80>
+	             
+        ServerName 52.24.125.52
+		     
 	ServerAdmin sonamshukla150@gmail.com
+	
 	WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
+	
 	<Directory /var/www/FlaskApp/FlaskApp/>
+	
 		Order allow,deny
+		
 		Allow from all
+		
 	</Directory>
+	
 	Alias /static /var/www/FlaskApp/FlaskApp/static
+	
 	<Directory /var/www/FlaskApp/FlaskApp/static/>
+	
 		Order allow,deny
+		
 		Allow from all
+		
 	</Directory>
+	
 	ErrorLog ${APACHE_LOG_DIR}/error.log
+	
 	LogLevel warn
+	
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
+	
 </VirtualHost>
 
 * Enable the virtual host with the following command: $ sudo a2ensite FlaskApp
@@ -138,13 +156,19 @@ $ sudo ufw enable
 * $ sudo nano flaskapp.wsgi 
 
 * Add the following lines of code to the flaskapp.wsgi file:
+
           #!/usr/bin/python
+	  
           import sys
+	  
           import logging
+	  
           logging.basicConfig(stream=sys.stderr)
+	  
           sys.path.insert(0,"/var/www/FlaskApp/")
           
           from FlaskApp import app as application
+	  
           application.secret_key = 'Secret Key'
          
 # Restart apache ::
