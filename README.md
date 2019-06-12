@@ -115,38 +115,23 @@ $ sudo ufw enable
   
 * Add the following lines of code to the file to configure the virtual host.
 
-        * <VirtualHost *:80>      
-        * ServerName 52.24.125.52
-		     
-	* ServerAdmin sonamshukla150@gmail.com
-	
-	WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
-	
-	<Directory /var/www/FlaskApp/FlaskApp/>
-	
-		Order allow,deny
-		
-		Allow from all
-		
-	</Directory>
-	
-	Alias /static /var/www/FlaskApp/FlaskApp/static
-	
-	<Directory /var/www/FlaskApp/FlaskApp/static/>
-	
-		Order allow,deny
-		
-		Allow from all
-		
-	</Directory>
-	
-	ErrorLog ${APACHE_LOG_DIR}/error.log
-	
-	LogLevel warn
-	
-	CustomLog ${APACHE_LOG_DIR}/access.log combined
-	
-</VirtualHost>
+    <VirtualHost *:80>      
+    ServerName 34.222.154.43
+    ServerAdmin admin@34.222.154.43
+    WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
+    <Directory /var/www/FlaskApp/FlaskApp/>
+     Order allow,deny	
+     Allow from all	
+     </Directory>
+     Alias /static /var/www/FlaskApp/FlaskApp/static
+     <Directory /var/www/FlaskApp/FlaskApp/static/>
+       Order allow,deny	
+       Allow from all	
+     </Directory> 
+     ErrorLog ${APACHE_LOG_DIR}/error.log
+     LogLevel warn
+     CustomLog ${APACHE_LOG_DIR}/access.log combined
+     </VirtualHost>
 
 * Enable the virtual host with the following command: $ sudo a2ensite FlaskApp
 
@@ -156,18 +141,12 @@ $ sudo ufw enable
 
 * Add the following lines of code to the flaskapp.wsgi file:
 
-          #!/usr/bin/python
-	  
+          #!/usr/bin/python  
           import sys
-	  
-          import logging
-	  
+          import loggin
           logging.basicConfig(stream=sys.stderr)
-	  
           sys.path.insert(0,"/var/www/FlaskApp/")
-          
           from FlaskApp import app as application
-	  
           application.secret_key = 'Secret Key'
          
 # Restart apache ::
