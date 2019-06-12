@@ -63,7 +63,7 @@ git -> Version control tool
  * reload SSH using service ssh restart
  
 * now you can use ssh to login with the new user you created
-   ssh -i [privateKeyFilename] grader@54.184.57.2
+   ssh -p 2200 -i [privateKeyFilename] grader@54.184.57.2
 
 *  $ sudo apt-get update
 *  $ sudo apt-get upgrade
