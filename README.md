@@ -26,17 +26,17 @@ git -> Version control tool
 
  *Access :
  _________
- IP Address : 34.222.154.43
+ IP Address : 34.221.129.24
 
  Private IP : 172.26.0.10
  
- SSH Port : 2200 / 2222
+ SSH Port : 2200 
  
 * Download the default private key 
 * Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory). like, you downloaded the file to the documents folder, just execute the following command in your terminal. mv ~/documents/udacity_key.rsa ~/.ssh/  
 
 * Open your terminal and type in chmod 600 ~/.ssh/udacity_key.rsa
-* In your terminal, type in ssh -i ~/.ssh/udacity_key.rsa root@34.222.154.43
+* In your terminal, type in ssh -i ~/.ssh/udacity_key.rsa root@34.221.129.24
 
 # Create a new user grder ::
  
@@ -63,7 +63,7 @@ git -> Version control tool
  * reload SSH using service ssh restart
  
 * now you can use ssh to login with the new user you created
-   ssh -i [privateKeyFilename] grader@34.222.154.43
+   ssh -i [privateKeyFilename] grader@34.221.129.24
 
 *  $ sudo apt-get update
 *  $ sudo apt-get upgrade
@@ -112,7 +112,7 @@ $ sudo ufw enable
 * Rename the project's name sudo mv ./ItemCatalog ./FlaskApp
 * Move to the inner FlaskApp directory using, $ cd FlaskApp
 * Rename item.py to __init__.py using,
-       $ sudo mv website.py __init__.py
+       $ sudo mv item.py __init__.py
 * Edit db_setup.py, item.py and lotsofitems.py and change engine = create_engine('sqlite:///db_catalog.db') to
     engine =  create_engine('postgresql://catalog:sonam@localhost/catalog')
 * $ sudo apt-get install python-pip
@@ -125,8 +125,8 @@ $ sudo ufw enable
 * Add the following lines of code to the file to configure the virtual host.
 
          <VirtualHost *:80>      
-         ServerName 34.222.154.43
-         ServerAdmin admin@34.222.154.43
+         ServerName 34.221.129.24
+         ServerAdmin admin@34.221.129.24
          WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
         <Directory /var/www/FlaskApp/FlaskApp/>
         Order allow,deny	
