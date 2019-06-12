@@ -26,7 +26,7 @@ git -> Version control tool
 
  *Access :
  _________
- IP Address : 34.221.129.24
+ IP Address : 54.184.57.2
 
  Private IP : 172.26.0.10
  
@@ -36,7 +36,7 @@ git -> Version control tool
 * Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory). like, you downloaded the file to the documents folder, just execute the following command in your terminal. mv ~/documents/udacity_key.rsa ~/.ssh/  
 
 * Open your terminal and type in chmod 600 ~/.ssh/udacity_key.rsa
-* In your terminal, type in ssh -i ~/.ssh/udacity_key.rsa root@34.221.129.24
+* In your terminal, type in ssh -i ~/.ssh/udacity_key.rsa root@54.184.57.2
 
 # Create a new user grder ::
  
@@ -63,7 +63,7 @@ git -> Version control tool
  * reload SSH using service ssh restart
  
 * now you can use ssh to login with the new user you created
-   ssh -i [privateKeyFilename] grader@34.221.129.24
+   ssh -i [privateKeyFilename] grader@54.184.57.2
 
 *  $ sudo apt-get update
 *  $ sudo apt-get upgrade
@@ -125,8 +125,8 @@ $ sudo ufw enable
 * Add the following lines of code to the file to configure the virtual host.
 
          <VirtualHost *:80>      
-         ServerName 34.221.129.24
-         ServerAdmin admin@34.221.129.24
+         ServerName 54.184.57.2
+         ServerAdmin admin@54.184.57.2
          WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
         <Directory /var/www/FlaskApp/FlaskApp/>
         Order allow,deny	
