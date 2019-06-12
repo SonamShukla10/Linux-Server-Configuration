@@ -115,11 +115,10 @@ $ sudo ufw enable
   
 * Add the following lines of code to the file to configure the virtual host.
 
-        <VirtualHost *:80>
-	             
-        ServerName 52.24.125.52
+        * <VirtualHost *:80>      
+        * ServerName 52.24.125.52
 		     
-	ServerAdmin sonamshukla150@gmail.com
+	* ServerAdmin sonamshukla150@gmail.com
 	
 	WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
 	
