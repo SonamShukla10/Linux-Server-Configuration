@@ -36,7 +36,7 @@ git -> Version control tool
 * Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory). like, you downloaded the file to the documents folder, just execute the following command in your terminal. mv ~/documents/udacity_key.rsa ~/.ssh/  
 
 * Open your terminal and type in chmod 600 ~/.ssh/udacity_key.rsa
-* In your terminal, type in ssh -i ~/.ssh/udacity_key.rsa root@54.184.57.2
+* In your terminal, type in ssh -i ~/.ssh/udacity_key.rsa ubuntu@54.184.57.2
 
 # Create a new user grder ::
  
