@@ -40,11 +40,20 @@ git -> Version control tool
 
 # Create a new user grder ::
  
-     sudo adduser grader 
+     sudo adduser grader ( Password = sonam)
      sudo apt-get install nano
      sudo nano /etc/sudoers
      sudo nano /etc/sudoers.d/grader
      sudo nano /etc/sudoers.d/grader, type in grader ALL=(ALL:ALL) ALL, save and     quit
+     
+* generate keys on local machine using $ ssh-keygen ( Passphrase = sonam) ; then save the private key in  ~/.ssh on local machine
+
+* deploy public key on developement enviroment On you virtual machine:
+
+      $ su - grader
+      $ mkdir .ssh
+      $ touch .ssh/authorized_keys
+      $ vim .ssh/authorized_keys     
 
 * Copy the public key generated on your local machine to this file and save
 
@@ -54,10 +63,10 @@ git -> Version control tool
  * reload SSH using service ssh restart
  
 * now you can use ssh to login with the new user you created
-ssh -i [privateKeyFilename] grader@52.24.125.52
+   ssh -i [privateKeyFilename] grader@34.222.154.43
 
-* * $ sudo apt-get update
-   $ sudo apt-get upgrade
+*  $ sudo apt-get update
+*  $ sudo apt-get upgrade
 
 * Use sudo vim /etc/ssh/sshd_config and then change Port 22 to Port 2200 , save & quit.
 * Reload SSH using sudo service ssh restart
@@ -86,7 +95,7 @@ $ sudo ufw enable
 * $ psql
 
 # Create Database ::
-* postgres=# CREATE DATABASE catalog;
+* postgres=# CREATE DATABASE catalog;  
 * postgres=# CREATE USER catalog;
 * postgres=# ALTER ROLE catalog WITH PASSWORD 'sonam';
 * Give permission, postgres=# GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;
