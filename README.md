@@ -278,7 +278,7 @@ sudo git clone https://github.com/boisalai/udacity-catalog-app.git catalog .
       sudo apt-get install libpq-dev
       pip install psycopg2
       
-* Run python3 __init__.py and you should see:
+* Run python3 __init__.py and you should see (If python3 does not work then put python2.7):
 
       * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
@@ -340,7 +340,8 @@ sudo git clone https://github.com/boisalai/udacity-catalog-app.git catalog .
 
 * From the /var/www/catalog/catalog/ directory, activate the virtual environment:   . venv3/bin/activate .
  
-*  Run: python lotsofitems.py .
+*  Run: python3 lotsofitems.py . 
+* ( If python3 does not work then put python2.7)
 *  Deactivate the virtual environment: deactivate .
 
 # Disable the default Apache site :
