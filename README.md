@@ -76,7 +76,7 @@ _____________________________________
       Firewall is active and enabled on system startup
 
 * Check the status of UFW to list current roles: sudo ufw status. The output should be like this:
-
+(UPDATED: Port 22 is now DENY.)
       Status: active
 
       To                         Action      From
@@ -146,8 +146,9 @@ _____________________________________
       * Check in /etc/ssh/sshd_config file if PasswordAuthentication is set to no
       * Restart SSH: sudo service ssh restart
 
-* On the local machine, run: ssh -i ~/.ssh/grader_key -p 2200 grader@54.200.16.195 . If, it is not working then try , $ su - grader and enter the grader's password.
-
+* On the local machine, run: ssh -i ~/.ssh/grader_key -p 2200 grader@54.200.16.195 (Passphrase : sonam).[UPDATED] 
+* If, it is not working then try , $ su - grader and enter the grader's password.
+* (UPDATE) : In case of missing updates and upgrades: apt-get update and apt-get upgrade
 #  Configure the local timezone to UTC :
  * While logged in as grader, configure the time zone: sudo dpkg-reconfigure tzdata. You should see something like that:
  
@@ -159,7 +160,6 @@ _____________________________________
 
 * While logged in as grader, install Apache: sudo apt-get install apache2.
 * Enter public IP of the Amazon Lightsail instance into browser. You should see Apache2 Ubuntu Default Page .
-* My project is built with Python 3. So, I need to install the Python 3 mod_wsgi package:
 
       sudo apt-get install libapache2-mod-wsgi-py3 
  *  Enable mod_wsgi using: sudo a2enmod wsgi.  
@@ -260,6 +260,7 @@ _____________________________________
 
       # engine = create_engine("sqlite:///db_catalog.db")
       engine = create_engine('postgresql://catalog:PASSWORD@localhost/catalog')
+* UPDATE: In "__init__".py(line 24), add absolute path of secretsClient.json --> /var/www/catalog/catalog/secretsClient.json 
       
 # Install the virtual environment and dependencies    
 * While logged in as grader, install pip:   sudo apt-get install python3-pip . 
