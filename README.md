@@ -249,8 +249,8 @@ _____________________________________
   sudo git clone https://github.com/SonamShukla10/ItemCatalog2.git catalog .
 * From the /var/www directory, change the ownership of the catalog directory to grader using: sudo chown -R grader:grader catalog/ .
 * Change to the /var/www/catalog/catalog directory.
-* Rename the item.py file to __init__.py using: mv item.py __init__.py .
-* In __init__.py, replace line :
+* Rename the item.py file to  "__init__.py"  using: mv item.py  "__init__.py"  .
+* In  "__init__" .py, replace line :
    
       # app.run(host="0.0.0.0", port=8000)
         app.run()
