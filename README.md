@@ -250,7 +250,7 @@ _____________________________________
 * From the /var/www directory, change the ownership of the catalog directory to grader using: sudo chown -R grader:grader catalog/ .
 * Change to the /var/www/catalog/catalog directory.
 * Rename the item.py file to __init__.py using:  mv item.py __init__.py 
- **( Committing remove '__' from the init.py. Please add '__'init'__'.py)
+*  **( Committing remove '__' from the init.py. Please add before init and after init)
 * In __init__.py replace line :
    
       # app.run(host="0.0.0.0", port=8000)
@@ -280,7 +280,7 @@ _____________________________________
       pip install psycopg2
       
 * Run python3 __init__.py and you should see (If python3 does not work then put python2.7) :
-
+* *  **( Committing remove '__' from the init.py. Please add before init and after init)
       * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
 * Deactivate the virtual environment:   deactivate .
