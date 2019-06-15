@@ -268,7 +268,7 @@ _____________________________________
 * Change the ownership to grader with:   sudo chown -R grader:grader venv3/ .
 * Activate the new environment:   . venv3/bin/activate .
 
-* Install the following dependencies:
+* Install the following dependencies :
     
       pip install httplib2
       pip install requests
