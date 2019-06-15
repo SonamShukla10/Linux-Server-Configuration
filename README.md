@@ -293,26 +293,26 @@ _____________________________________
 
 * Create /etc/apache2/sites-available/catalog.conf and add the following lines to configure the virtual host:
 
-<VirtualHost *:80>
-    ServerName 54.200.16.195
-    ServerAlias ec2-54-200-16-195.us-west-2.compute.amazonaws.com
-    ServerAdmin grader@54.200.16.195
-    WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/venv3/lib/python2.7/site-packages
-    WSGIProcessGroup catalog
-    WSGIScriptAlias / /var/www/catalog/catalog.wsgi
-    <Directory /var/www/catalog/catalog/>
+      <VirtualHost *:80>
+      ServerName 54.200.16.195
+      ServerAlias ec2-54-200-16-195.us-west-2.compute.amazonaws.com
+      ServerAdmin grader@54.200.16.195
+      WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/venv3/lib/python2.7/site-packages
+      WSGIProcessGroup catalog
+      WSGIScriptAlias / /var/www/catalog/catalog.wsgi
+      <Directory /var/www/catalog/catalog/>
         Order allow,deny
         Allow from all
-    </Directory>
-    Alias /static /var/www/catalog/catalog/static
-    <Directory /var/www/catalog/catalog/static/>
+      </Directory>
+      Alias /static /var/www/catalog/catalog/static
+      <Directory /var/www/catalog/catalog/static/>
         Order allow,deny
         Allow from all
-    </Directory>
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    LogLevel warn
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+      </Directory>
+      ErrorLog ${APACHE_LOG_DIR}/error.log
+      LogLevel warn
+      CustomLog ${APACHE_LOG_DIR}/access.log combined
+      </VirtualHost>
       
  * Enable virtual host: sudo a2ensite catalog. The following prompt will be returned:
  
