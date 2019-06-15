@@ -43,7 +43,7 @@ git -> Version control tool
 * Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory). like, you downloaded the file to the documents folder, just execute the following command in your terminal. mv ~/documents/lightsail_key.rsa ~/.ssh/  
 
 * Open your terminal and type in chmod 600 ~/.ssh/lightsail_key.rsa
-* In your terminal, type in ssh -i ~/.ssh/lightsail_key.rsa -p 2200 ubuntu@54.200.16.195, where 54.200.16.195 is the public IP address of instance.
+* In your terminal, type in ssh -i ~/.ssh/lightsail_key.rsa ubuntu@54.200.16.195, where 54.200.16.195 is the public IP address of instance.
 
 # Secure the server
 _____________________________________
