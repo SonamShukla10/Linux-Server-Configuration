@@ -278,7 +278,7 @@ _____________________________________
       sudo apt-get install libpq-dev
       pip install psycopg2
       
-* Run python3 "__init__.py" and you should see (If python3 does not work then put python2.7):
+* Run python3 "__init__.py" and you should see (If python3 does not work then put python2.7) :
 
       * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
