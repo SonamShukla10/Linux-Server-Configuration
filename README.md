@@ -250,7 +250,7 @@ _____________________________________
 * From the /var/www directory, change the ownership of the catalog directory to grader using: sudo chown -R grader:grader catalog/ .
 * Change to the /var/www/catalog/catalog directory.
 * Rename the item.py file to __init__.py using:  mv item.py __init__.py 
-*  **( Committing remove '__' from the init.py. Please add before init and after init)
+*  **( Committing removes '__' from the init.py. Please add before init and after init)
 * In __init__.py replace line :
    
       # app.run(host="0.0.0.0", port=8000)
@@ -279,8 +279,8 @@ _____________________________________
       sudo apt-get install libpq-dev
       pip install psycopg2
       
-* Run python3 __init__.py and you should see (If python3 does not work then put python2.7) :
-* *  **( Committing remove '__' from the init.py. Please add before init and after init)
+* Run python2.7 __init__.py and you should see :
+* *  **( Committing removes '__' from the init.py. Please add before init and after init)
       * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
 * Deactivate the virtual environment:   deactivate .
@@ -290,7 +290,7 @@ _____________________________________
 * Add the following line in /etc/apache2/mods-enabled/wsgi.conf file to use Python 3 .
 
       #WSGIPythonPath directory|directory-1:directory-2:...
-      WSGIPythonPath /var/www/catalog/venv3/lib/python3.5/site-packages
+      WSGIPythonPath /var/www/catalog/venv3/lib/python2.7/site-packages
 
 * Create /etc/apache2/sites-available/catalog.conf and add the following lines to configure the virtual host:
 
@@ -344,8 +344,7 @@ _____________________________________
 
 * From the /var/www/catalog/catalog/ directory, activate the virtual environment:   . venv3/bin/activate .
  
-*  Run: python3 lotsofitems.py . 
-* ( If python3 does not work then put python2.7)
+*  Run: python2.7 lotsofitems.py . 
 *  Deactivate the virtual environment: deactivate .
 
 # Disable the default Apache site :
