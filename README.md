@@ -23,7 +23,7 @@ git -> Version control tool
 
 ** Choose Linux/Unix platform, OS Only and Ubuntu 16.04 LTS.
 
-** Choose a instance plan (I took the cheapest, $5/month).
+** Choose a instance plan.
 
 ** Keep the default name provided by AWS or rename your instance.
 
