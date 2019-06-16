@@ -39,8 +39,8 @@ git -> Version control tool
  
  SSH Port : 2200 
  
-* Download the default private key 
-* Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory). like, you downloaded the file to the documents folder, just execute the following command in your terminal. mv ~/documents/lightsail_key.rsa ~/.ssh/  
+* Download the default private key and rename it to lightsail_key.rsa : mv LightsailDefaultKey-us-west-2.pem lightsail_key.rsa
+* Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory). like, you downloaded the file to the documents folder, just execute the following command in your terminal. cp lightsail_key.rsa ~/.ssh/
 
 * Open your terminal and type in chmod 600 ~/.ssh/lightsail_key.rsa
 * In your terminal, type in ssh -i ~/.ssh/lightsail_key.rsa ubuntu@54.200.16.195, where 54.200.16.195 is the public IP address of instance.
@@ -106,7 +106,7 @@ _____________________________________
 # Give grader access :
 
 * While logged in as ubuntu, add user: sudo adduser grader.
-* Enter a password (twice) and fill out information for this new user.(sonam) 
+* Enter a password (twice) and fill out information for this new user.(Password: sonam) 
 
 # Give grader the permission to sudo :
 
@@ -134,7 +134,7 @@ _____________________________________
         
       * Run ssh-keygen 
       * Enter file in which to save the key (I gave the name grader_key) in the local directory ~/.ssh
-      * Enter in a passphrase twice. Two files will be generated ( ~/.ssh/grader_key and ~/.ssh/grader_key.pub)
+      * Enter in a passphrase twice. Two files will be generated ( ~/.ssh/grader_key and ~/.ssh/grader_key.pub). Passphrase: sonam
       * Run cat ~/.ssh/grader_key.pub and copy the contents of the file
       * Log in to the grader's virtual machine
 
